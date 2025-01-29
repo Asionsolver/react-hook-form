@@ -1,8 +1,4 @@
-// import { LoginForm } from './components/forms/LoginForm';
-
-import SimpleForm from "./components/forms/simple/SimpleForm";
-
-// import { RegistrationForm } from "./components/forms/RegistrationForm";
+import AdvancedForm from "./components/forms/complex/AdvancedForm";
 
 function App() {
   return (
@@ -14,7 +10,10 @@ function App() {
 
       {/* <RegistrationForm /> */}
       {/* <Easy /> */}
-      <SimpleForm />
+      {/* <SimpleForm /> */}
+      {/* <RegistrationForm /> */}
+      {/* <OrderForm /> */}
+      <AdvancedForm />
     </>
   );
 }
