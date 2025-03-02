@@ -1,6 +1,5 @@
-import MultiStepForm from "./components/forms/trigger/MultistepForm";
-import SimpleForm from "./components/forms/trigger/SimpleForm";
-import SubscriptionForm from "./components/forms/trigger/SubscriptionForm";
+import ProfileForm from "./components/forms/formState/dirty/ProfileForm";
+
 
 
 
@@ -21,9 +20,11 @@ function App() {
       {/* <OrderForm /> */}
       {/* <AdvancedForm /> */}
       {/* <Adv2 /> */}
-      <SimpleForm />
+      {/* <SimpleForm />
       <SubscriptionForm />
-      <MultiStepForm />
+      <MultiStepForm /> */}
+      {/* <RegisterForm /> */}
+      <ProfileForm />
     </>
   );
 }
