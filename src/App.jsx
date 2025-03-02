@@ -1,4 +1,10 @@
-import AdvancedForm from "./components/forms/complex/AdvancedForm";
+import MultiStepForm from "./components/forms/trigger/MultistepForm";
+import SimpleForm from "./components/forms/trigger/SimpleForm";
+import SubscriptionForm from "./components/forms/trigger/SubscriptionForm";
+
+
+
+
 
 function App() {
   return (
@@ -13,7 +19,11 @@ function App() {
       {/* <SimpleForm /> */}
       {/* <RegistrationForm /> */}
       {/* <OrderForm /> */}
-      <AdvancedForm />
+      {/* <AdvancedForm /> */}
+      {/* <Adv2 /> */}
+      <SimpleForm />
+      <SubscriptionForm />
+      <MultiStepForm />
     </>
   );
 }

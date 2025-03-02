@@ -1,21 +1,11 @@
 import { useForm } from "react-hook-form";
-import { ToastContainer, toast } from "react-toastify";
+
 export const Easy = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    if (data.name) {
-      toast.success(` Your name is ${data.name}`, {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-    }
   };
+
   return (
     <div>
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
@@ -40,7 +30,7 @@ export const Easy = () => {
           Submit
         </button>
       </form>
-      <ToastContainer />
+
     </div>
   );
 };
