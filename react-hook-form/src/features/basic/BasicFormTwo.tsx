@@ -11,11 +11,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const schema = z.object({
   name: z.string().min(3),
   email: z.string().email(),
-  age: z.number().min(18).max(120),
+  age: z.coerce.number().min(18).max(120),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -28,7 +29,7 @@ const BasicFormTwo = () => {
     console.log(data);
   };
   return (
-    <div>
+    <div className="">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
@@ -36,9 +37,13 @@ const BasicFormTwo = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel className="text-white mt-2">Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your name" {...field} />
+                  <Input
+                    placeholder="Your name"
+                    {...field}
+                    className="text-white"
+                  />
                 </FormControl>
                 <FormDescription>
                   This is your public display name.
@@ -47,6 +52,53 @@ const BasicFormTwo = () => {
               </FormItem>
             )}
           />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-white mt-2">Email</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Your email"
+                    {...field}
+                    className="text-white"
+                  />
+                </FormControl>
+                <FormDescription>
+                  This is your public display email.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="age"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-white mt-2">Age</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Your age"
+                    type="number"
+                    {...field}
+                    className="text-white"
+                  />
+                </FormControl>
+                <FormDescription>
+                  This is your public display age.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded mt-2"
+          >
+            Submit
+          </Button>
         </form>
       </Form>
     </div>
